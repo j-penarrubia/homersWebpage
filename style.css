@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'SimpsonFont';
+  src: url('./assets/Simpsonfont.otf') format('truetype');
+}
+
+body {
+  background-color: #7ec1c6 !important;
+}
+
+#btn-sonido {
+  border: 3px solid black;
+  background-color: #FFDE00;
+  color: black;
+  margin-top: 35px;
+  border-radius: 25px;
+  font-family: 'Simpsonfont', serif;
+}
+
+#icono-sonido {
+  font-size: 1.25rem;
+  position: relative;
+  top: 2px;
+  background-color: transparent;
+}
+
+.container-cortinas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cortinas {
+  width: 50%;
+  height: 100%;
+  background-color: #a30000;
+  background-image: repeating-linear-gradient(to right,
+      #a30000,
+      #a30000 40px,
+      #800000 40px,
+      #800000 80px);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  pointer-events: auto;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.cort-izq {
+  animation-name: abrir-izq;
+  border-right: 1px solid #520000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cort-der {
+  animation-name: abrir-der;
+  border-left: 1px solid #520000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@keyframes abrir-izq {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes abrir-der {
+  100% {
+    transform: translateX(100%);
+  }
+}
